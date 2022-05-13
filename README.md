@@ -1,2 +1,4 @@
-# python-projects-lc-ufrpe
- Python Projects @LC-UFRPE programming classes
+
+### Python Projects @LC-UFRPE programming classes
+  
+ by Andre Barros
