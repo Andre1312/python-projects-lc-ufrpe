@@ -1,19 +1,10 @@
 import os
+from re import L
 import time
 
 def limpaTela():
    os.system('cls' if os.name=='nt' else 'clear')
 
-    # if os.name=='nt':
-    #     print('CLS')
-    #     time.sleep(3)
-    #     os.system("cls")
-    # elif os.name=='posix' or os.name=='unix':
-    #     print('CLEAR')
-    #     time.sleep(3)
-    #     os.system("clear")
-    # else:
-    #     print('\n' * os.get_terminal_size().lines())
 
 print(f'OS name: {os.name}')
 print(f'Terminal # lines: {os.get_terminal_size()}')
@@ -22,9 +13,11 @@ while True:
     msg=input(':> ').lower()
     if msg == 's':
         print('Saindo...')
+        time.sleep(0.750)
         limpaTela()
         break
 
     if msg == 'l':
         print('Limpando Tela')
+        time.sleep(0.750)
         limpaTela()
