@@ -3,9 +3,16 @@ import csv
 import time
 import prettytable as pt
 
+#constantes e variaveis
+TEMPO_ESPERA = 0.300
+sair = False
+
 def limpaTela():
 # Função limpa tela do terminal
     os.system('cls' if os.name=='nt' else 'clear')
+    
+def sairAplicacao():
+    return True
     
 def menuPrincipal():
 
@@ -20,33 +27,33 @@ def menuPrincipal():
     print()
     while True:
         opcao = input(':> ').lower()
-        if opcao not in ['1','2','3','4','s']:
+        if opcao in ['1','2','3','4','s']:
             break
-        if opcao=='1':
-            print('Selecionado 1...')
-            time.sleep(0.3)
-            limpaTela()
-            cadastroUsuario()
-        if opcao=='2':
-            print('Selecionado 2...')
-            time.sleep(0.3)
-            limpaTela()
-            cadastroItem()
-        if opcao=='3':
-            print('Selecionado 3...')
-            time.sleep(0.3)
-            limpaTela()
-            cadastroEstoque()
-        if opcao=='4':
-            print('Selecionado 4...')
-            time.sleep(0.3)
-            limpaTela()
-            imprimeRelatorio()
-        if opcao=='s':
-            print('Selecionado S...')
-            time.sleep(0.3)
-            limpaTela()
-            sairAplicacao()
+    if opcao=='1':
+        print('Selecionado 1...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        cadastroUsuario()
+    if opcao=='2':
+        print('Selecionado 2...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        cadastroItem()
+    if opcao=='3':
+        print('Selecionado 3...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        cadastroEstoque()
+    if opcao=='4':
+        print('Selecionado 4...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        imprimeRelatorio()
+    if opcao=='s':
+        print('Selecionado S...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        return True
 
 def cadastroUsuario():
     limpaTela()
@@ -62,16 +69,31 @@ def cadastroUsuario():
         opcao = input(':> ').lower()
         if opcao in ['1', '2', '3', '4', 'v']:
             break
-        if opcao == '1':
-            adicionarUsuario()
-        if opcao == '2':
-            editarUsuario()
-        if opcao == '3':
-            listarUsuario()
-        if opcao == '4':
-            apagarUsuario()
-        if opcao == 'v':
-            menuPrincipal()
+    if opcao == '1':
+        print('Selecionado 1...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        adicionarUsuario()
+    if opcao == '2':
+        print('Selecionado 2...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        editarUsuario()
+    if opcao == '3':
+        print('Selecionado 3...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        listarUsuario()
+    if opcao == '4':
+        print('Selecionado 4...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        apagarUsuario()
+    if opcao == 'v':
+        print('Selecionado V...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        menuPrincipal()
 
 def cadastroItem():
     limpaTela()
@@ -87,16 +109,31 @@ def cadastroItem():
         opcao = input(':> ').lower()
         if opcao in ['1', '2', '3', '4', 'v']:
             break
-        if opcao == '1':
-            adicionarItem()
-        if opcao == '2':
-            editarItem()
-        if opcao == '3':
-            listarItem()
-        if opcao == '4':
-            apagarItem()
-        if opcao == 'v':
-            menuPrincipal()
+    if opcao == '1':
+        print('Selecionado 1...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        adicionarItem()
+    if opcao == '2':
+        print('Selecionado 2...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()        
+        editarItem()
+    if opcao == '3':
+        print('Selecionado 3...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        listarItem()
+    if opcao == '4':
+        print('Selecionado 4...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        apagarItem()
+    if opcao == 'v':
+        print('Selecionado V...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        menuPrincipal()
 
 
 def cadastroEstoque():
@@ -108,25 +145,45 @@ def cadastroEstoque():
     print('3 - Listar Estoque')
     print('4 - Apagar Estoque')
     print('V - Voltar ao MENU PRINCIPAL')
+    print()
     while True:
         opcao = input(':> ').lower()
         if opcao in ['1', '2', '3', '4', 'v']:
             break
-        if opcao == '1':
-            adicionarEstoque()
-        if opcao == '2':
-            editarEstoque()
-        if opcao == '3':
-            listarEstoque()
-        if opcao == '4':
-            apagarEstoque()
-        if opcao == 'v':
-            menuPrincipal()
+    if opcao == '1':
+        print('Selecionado 1...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        adicionarEstoque()
+    if opcao == '2':
+        print('Selecionado 2...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        editarEstoque()
+    if opcao == '3':
+        print('Selecionado 3...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        listarEstoque()
+    if opcao == '4':
+        print('Selecionado 4...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        apagarEstoque()
+    if opcao == 'v':
+        print('Selecionado V...')
+        time.sleep(TEMPO_ESPERA)
+        limpaTela()
+        menuPrincipal()
 
 
 #
 # principal
 #
 
-while True:
+
+while not sair:
     menuPrincipal()
+    if menuPrincipal() == True:
+        print('Aplicação Finalizada...')
+        break
