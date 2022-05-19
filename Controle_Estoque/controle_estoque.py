@@ -80,21 +80,25 @@ def cadastroUsuario():
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         MU.adicionarUsuario()
+        cadastroUsuario()
     if opcao == '2':
         print('Selecionado 2...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         MU.editarUsuario()
+        cadastroUsuario()
     if opcao == '3':
         print('Selecionado 3...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         MU.listarUsuario()
+        cadastroUsuario()
     if opcao == '4':
         print('Selecionado 4...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         MU.apagarUsuario()
+        cadastroUsuario()
     if opcao == 'v':
         print('Selecionado V...')
         time.sleep(TEMPO_ESPERA)

@@ -20,3 +20,9 @@ while True:
         print('Limpando Tela...')
         time.sleep(0.750)
         limpaTela()
+        
+
+while True:
+        s=input('s...').lower()
+        if s=='s':
+            break
