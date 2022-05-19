@@ -1,15 +1,12 @@
 import os
 import csv
+import time
 import prettytable as pt
 
 def limpaTela():
-    if os.name=='nt':
-        os.system("cls")
-    elif os.name=='unix' or os.name=='posix':
-        os.sytem("clear")
-    else:
-        print('\n' * os.get_terminal_size().lines())
-
+# Função limpa tela do terminal
+    os.system('cls' if os.name=='nt' else 'clear')
+    
 def menuPrincipal():
 
     limpaTela()
@@ -23,17 +20,32 @@ def menuPrincipal():
     print()
     while True:
         opcao = input(':> ').lower()
-        if opcao in ['1','2','3','4','s']:
+        if opcao not in ['1','2','3','4','s']:
             break
         if opcao=='1':
+            print('Selecionado 1...')
+            time.sleep(0.3)
+            limpaTela()
             cadastroUsuario()
         if opcao=='2':
+            print('Selecionado 2...')
+            time.sleep(0.3)
+            limpaTela()
             cadastroItem()
         if opcao=='3':
+            print('Selecionado 3...')
+            time.sleep(0.3)
+            limpaTela()
             cadastroEstoque()
         if opcao=='4':
+            print('Selecionado 4...')
+            time.sleep(0.3)
+            limpaTela()
             imprimeRelatorio()
         if opcao=='s':
+            print('Selecionado S...')
+            time.sleep(0.3)
+            limpaTela()
             sairAplicacao()
 
 def cadastroUsuario():
@@ -117,4 +129,4 @@ def cadastroEstoque():
 #
 
 while True:
-    menuPrincipal
+    menuPrincipal()

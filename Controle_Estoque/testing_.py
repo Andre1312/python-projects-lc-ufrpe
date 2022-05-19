@@ -1,5 +1,4 @@
 import os
-from re import L
 import time
 
 def limpaTela():
@@ -7,7 +6,7 @@ def limpaTela():
 
 
 print(f'OS name: {os.name}')
-print(f'Terminal # lines: {os.get_terminal_size()}')
+print(f'Terminal # lines: {os.get_terminal_size().lines}')
 while True:
     print('Sai ou Limpa =>')
     msg=input(':> ').lower()
@@ -18,6 +17,6 @@ while True:
         break
 
     if msg == 'l':
-        print('Limpando Tela')
+        print('Limpando Tela...')
         time.sleep(0.750)
         limpaTela()
