@@ -1,4 +1,11 @@
-"""
+'''
+UFRPE - Licenciatura em Computacao
+Laboratorio de Programacao 1
+Aluno - Andre Barros
+PROJETO 2VA - Controle de Estoque
+
+
+
     Modulo peça - funções para CRUD no arquivo peca.csv
     
     campos:
@@ -7,9 +14,9 @@
     tipo
     data_atualizacao
     ativo
-      
+'''      
     
-"""
+
 import csv
 import time
 import datetime

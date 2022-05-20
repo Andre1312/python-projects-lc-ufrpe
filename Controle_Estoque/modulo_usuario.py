@@ -1,4 +1,9 @@
-"""
+'''
+UFRPE - Licenciatura em Computacao
+Laboratorio de Programacao 1
+Aluno - Andre Barros
+PROJETO 2VA - Controle de Estoque
+
     Modulo usuario - funções para CRUD no arquivo usuario.csv
 
     campos:
@@ -9,8 +14,8 @@
     data_atualizacao
     ativo
     
+'''
 
-"""
 import os
 import csv
 import time

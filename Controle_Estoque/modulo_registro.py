@@ -1,4 +1,11 @@
-"""
+'''
+UFRPE - Licenciatura em Computacao
+Laboratorio de Programacao 1
+Aluno - Andre Barros
+PROJETO 2VA - Controle de Estoque
+
+
+
     Modulo registro - funções para CRUD no arquivo registro.csv
     
     campos:
@@ -10,9 +17,9 @@
     qtde_removida
     data_atualizacao
     
-      
+'''      
     
-"""
+
 import csv
 import time
 import datetime
