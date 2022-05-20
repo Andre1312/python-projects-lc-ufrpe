@@ -18,20 +18,20 @@ import time
 import datetime
 import prettytable as PT
 
-def adicionarPeca():
+def adicionarEstoque():
     pass
 
-def editarPeca():
+def editarEstoque():
     pass
 
-def listarPeca():
+def listarEstoque():
     pass
 
-def apagarPeca():
+def apagarEstoque():
     pass
 
-def salvarPecaArquivo():
+def salvarEstoque():
     pass
 
-def lerPecaArquivo():
+def lerEstoque():
     pass

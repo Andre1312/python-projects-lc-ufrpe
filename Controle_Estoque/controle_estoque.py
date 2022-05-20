@@ -38,22 +38,22 @@ def menuPrincipal():
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         cadastroUsuario()
-    if opcao=='2':
+    elif opcao=='2':
         print('Selecionado 2...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         cadastroPeca()
-    if opcao=='3':
+    elif opcao=='3':
         print('Selecionado 3...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         cadastroEstoque()
-    if opcao=='4':
+    elif opcao=='4':
         print('Selecionado 4...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         imprimeRelatorio()
-    if opcao=='s':
+    elif opcao=='s':
         print('Selecionado S...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
@@ -81,25 +81,25 @@ def cadastroUsuario():
         MUT.limpaTela()
         MU.adicionarUsuario()
         cadastroUsuario()
-    if opcao == '2':
+    elif opcao == '2':
         print('Selecionado 2...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         MU.editarUsuario()
         cadastroUsuario()
-    if opcao == '3':
+    elif opcao == '3':
         print('Selecionado 3...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         MU.listarUsuario()
         cadastroUsuario()
-    if opcao == '4':
+    elif opcao == '4':
         print('Selecionado 4...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         MU.apagarUsuario()
         cadastroUsuario()
-    if opcao == 'v':
+    elif opcao == 'v':
         print('Selecionado V...')
         time.sleep(TEMPO_ESPERA)
         menuPrincipal()
@@ -125,22 +125,22 @@ def cadastroPeca():
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         MP.adicionarPeca()
-    if opcao == '2':
+    elif opcao == '2':
         print('Selecionado 2...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()        
         MP.editarPeca()
-    if opcao == '3':
+    elif opcao == '3':
         print('Selecionado 3...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         MP.listarPeca()
-    if opcao == '4':
+    elif opcao == '4':
         print('Selecionado 4...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
         MP.apagarPeca()
-    if opcao == 'v':
+    elif opcao == 'v':
         print('Selecionado V...')
         time.sleep(TEMPO_ESPERA)
         menuPrincipal()
@@ -166,23 +166,23 @@ def cadastroEstoque():
         print('Selecionado 1...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
-        adicionarEstoque()
-    if opcao == '2':
+        MR.adicionarEstoque()
+    elif opcao == '2':
         print('Selecionado 2...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
-        editarEstoque()
-    if opcao == '3':
+        MR.editarEstoque()
+    elif opcao == '3':
         print('Selecionado 3...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
-        listarEstoque()
-    if opcao == '4':
+        MR.listarEstoque()
+    elif opcao == '4':
         print('Selecionado 4...')
         time.sleep(TEMPO_ESPERA)
         MUT.limpaTela()
-        apagarEstoque()
-    if opcao == 'v':
+        MR.apagarEstoque()
+    elif opcao == 'v':
         print('Selecionado V...')
         time.sleep(TEMPO_ESPERA)
         menuPrincipal()

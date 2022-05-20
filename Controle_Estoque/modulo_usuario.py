@@ -15,18 +15,9 @@ import os
 import csv
 import time
 import datetime
-from typing import Iterator
 from prettytable import PrettyTable
 
 import modulo_util as MUT
-
-def buscarUsuario(id,lista):
-    usuarios = lista
-    for i,u Iterator 
-        
-    
-    pass
-
 
 def adicionarUsuario():
     usuario = []
@@ -38,7 +29,7 @@ def adicionarUsuario():
         return
         # testa se id_usuario é unico
     for linha in usuarios:
-        if id_usuario == linha[0]:
+        if id_usuario in linha[0]:
             print('Usuario já existe ! Digite um novo ID...')
             time.sleep(1)
             MUT.limpaTela()
@@ -56,45 +47,61 @@ def adicionarUsuario():
     usuario.append(data_atualizacao)
     usuario.append(ativo)
     
-    salvarUsuario(usuario)        
+    salvarUsuario(usuario)
             
     
 
 def editarUsuario():
-    pass
-
-def listarUsuario():
-    usuarios=lerUsuario()
-    tabela = PrettyTable()
-    tabela.field_names=["ID","NOME","SOBRENOME","APELIDO","DATA","ATIVO"]
-        
+    usuario = []
+    usuarios = lerUsuario()
+    print('EDITAR USUARIO')
+    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
+    id_usuario = str(input('Entre com o ID do usuario (S sai...): ')).lower()
+    if id_usuario in ['s']:
+        return
     for u in usuarios:
-        tabela.add_row(u)
+        if id_usuario in u[0]:
+            print(f'ID ::{u[0]} :: {u[3]} :: {u[1]}')
+        elif id_usuario not in u[0]:
+            print('Usuario Inexistente... entre com ID valido da lista de usuarios...')
         
+    print()
+    while True:
+        opcao = input('V para voltar... ').lower()
+        if opcao in ['v']:
+            break  
+    
+        
+def listarUsuario():
+    usuarios = lerUsuario()
+    tabela = PrettyTable()
+    # tabela.clear()
+    tabela.field_names=["ID","NOME","SOBRENOME","APELIDO","DATA","ATIVO"]
+    
+    for u in usuarios:
+        # print(u)
+        tabela.add_row(u)
+    
     print(tabela)
     print(f'Registros: {len(usuarios)}')
+    print()
     while True:
         opcao = input('V para voltar... ').lower()
         if opcao in ['v']:
             break
-    
-
 def apagarUsuario():
     pass
 
 def salvarUsuario(usuario):
     arquivo = 'Controle_Estoque/usuario.csv'
-    with open(arquivo,'a') as arq:
-        arq_csv=csv.writer(arq,delimiter=",")
+    with open(arquivo,'a',newline='') as arq:
+        arq_csv = csv.writer(arq,delimiter=",")
         arq_csv.writerow(usuario)
-    
-
+        
 def lerUsuario():
     arquivo = 'Controle_Estoque/usuario.csv'
-    with open(arquivo,'r') as arq:
+    with open(arquivo,'r', newline='') as arq:
         usuarios = csv.reader(arq, delimiter=",")
         usuarios = list(usuarios)
+        print(f'Registros: {len(usuarios)}')
     return usuarios
-        
-    
-
