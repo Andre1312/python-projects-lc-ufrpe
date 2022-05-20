@@ -102,6 +102,9 @@ def editarUsuario():
     return
         
 def listarUsuario():
+    print('LISTA DE USUARIOS')
+    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
+    print()
     usuarios = lerUsuario()
     tabela = PrettyTable()
     # tabela.clear()
@@ -120,7 +123,54 @@ def listarUsuario():
             break
         
 def apagarUsuario():
-    pass
+    msg=0
+    edicao_usuario = []
+    usuarios = lerUsuario()
+    print('APAGAR USUARIO')
+    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
+    id_usuario = str(input('Entre com o ID do usuario (S sai...): ')).lower()
+    if id_usuario in ['s']:
+        return
+    for u in usuarios:
+        if id_usuario in u[0]:
+            idx = usuarios.index(u)
+        else:
+            msg+=1
+    if msg == len(usuarios):
+        print('Usuario Inexistente... entre com ID valido da lista de usuarios...')    
+        print()
+        while True:
+            opcao = input('V para voltar... ').lower()
+            if opcao in ['v']:
+                break
+        return
+    
+    edicao = PrettyTable()
+    edicao.field_names=["ID","NOME","SOBRENOME","APELIDO","DATA","ATIVO"]
+    edicao.add_row(usuarios[idx])
+    print(edicao)
+    print()
+    
+    id_usuario = usuarios[idx][0]
+    nome = usuarios[idx][1]
+    sobrenome = usuarios[idx][2]
+    apelido = usuarios[idx][3]
+    data_atualizacao = usuarios[idx][4]
+        
+    ativo = str(input('S para ativo e N para desativado: ')).lower()
+    
+    edicao_usuario.append(id_usuario)
+    edicao_usuario.append(nome)
+    edicao_usuario.append(sobrenome)
+    edicao_usuario.append(apelido)
+    edicao_usuario.append(data_atualizacao)
+    edicao_usuario.append(ativo)
+    
+    usuarios.remove(usuarios[idx])
+    usuarios.append(edicao_usuario)
+       
+    salvarUsuarioArquivo(usuarios)
+    
 
 def salvarUsuario(usuario):
     arquivo = 'Controle_Estoque/usuario.csv'
