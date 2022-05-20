@@ -68,8 +68,8 @@ def editarEstoque():
     msg=0
     edicao_registro = []
     registros = lerEstoque()
-    print('APAGAR REGISTRO ESTOQUE')
-    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
+    print('EDIATAR REGISTRO ESTOQUE')
+    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     id_registro = str(input('Entre com o ID da registro (S sai...): ')).lower()
     if id_registro in ['s']:
         return
@@ -93,17 +93,22 @@ def editarEstoque():
     print(edicao)
     print()
     
-    id_registro = registros[idx][0]
-    nome = registros[idx][1]
-    tipo = registros[idx][2]
+    id_usuario = str(input('Entre com o ID Usuario do registro: ')).title()
+    id_peca = str(input('Entre com o ID Peça do registro: ')).upper()
+    qtde_inicial = str(int(input('Entre com a Quantidade inicial: ')))
+    qtde_adicionada = str(int(input('Entre com a Quantidade adicionada: ')))
+    qtde_removida = str(int(input('Entre com a Quantidade removida: ')))
     data_atualizacao = datetime.datetime.now()
     data_atualizacao = data_atualizacao.strftime("%Y/%m/%d %H:%M:%S")  
         
     ativo = str(input('S para ativo e N para desativado: ')).lower()
     
     edicao_registro.append(id_registro)
-    edicao_registro.append(nome)
-    edicao_registro.append(tipo)
+    edicao_registro.append(id_usuario)
+    edicao_registro.append(id_peca)
+    edicao_registro.append(qtde_inicial)
+    edicao_registro.append(qtde_adicionada)
+    edicao_registro.append(qtde_removida)
     edicao_registro.append(data_atualizacao)
     edicao_registro.append(ativo)
     
@@ -132,7 +137,58 @@ def listarEstoque():
             break
 
 def apagarEstoque():
-    pass
+    msg=0
+    edicao_registro = []
+    registros = lerEstoque()
+    print('APAGAR REGISTRO ESTOQUE')
+    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
+    id_registro = str(input('Entre com o ID da registro (S sai...): ')).lower()
+    if id_registro in ['s']:
+        return
+    for u in registros:
+        if id_registro in u[0]:
+            idx = registros.index(u)
+        else:
+            msg+=1
+    if msg == len(registros):
+        print('Registro Inexistente... entre com ID valido da lista de peças...')    
+        print()
+        while True:
+            opcao = input('V para voltar... ').lower()
+            if opcao in ['v']:
+                break
+        return
+    
+    edicao = PrettyTable()
+    edicao.field_names=["ID","ID_USUARIO","ID_PEÇA","QTDE_INICIAL","QTDE ADICIONADA","QTDE REMOVIDA","DATA","ATIVO"]
+    edicao.add_row(registros[idx])
+    print(edicao)
+    print()
+    
+    id_registro = registros[idx][0]
+    id_usuario = registros[idx][1]
+    id_peca = registros[idx][2]
+    qtde_inicial = registros[idx][3]
+    qtde_adicionada = registros[idx][4]
+    qtde_removida = registros[idx][5]
+    data_atualizacao = datetime.datetime.now()
+    data_atualizacao = data_atualizacao.strftime("%Y/%m/%d %H:%M:%S")  
+        
+    ativo = str(input('S para ativo e N para desativado: ')).lower()
+    
+    edicao_registro.append(id_registro)
+    edicao_registro.append(id_usuario)
+    edicao_registro.append(id_peca)
+    edicao_registro.append(qtde_inicial)
+    edicao_registro.append(qtde_adicionada)
+    edicao_registro.append(qtde_removida)
+    edicao_registro.append(data_atualizacao)
+    edicao_registro.append(ativo)
+    
+    registros.remove(registros[idx])
+    registros.append(edicao_registro)
+       
+    salvarEstoqueArquivo(registros)
 
 def salvarEstoque(registro):
     arquivo = 'Controle_Estoque/registro.csv'
