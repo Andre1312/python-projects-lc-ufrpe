@@ -29,8 +29,8 @@ def adicionarUsuario():
         return
         # testa se id_usuario é unico
     for linha in usuarios:
-        if id_usuario in linha[0]:
-            print('Usuario já existe ! Digite um novo ID...')
+        if id_usuario == linha[0]:
+            print('Usuario já existe (ID tem de ser numeros) ! Digite um novo ID...')
             time.sleep(1)
             MUT.limpaTela()
             adicionarUsuario()
@@ -52,7 +52,8 @@ def adicionarUsuario():
     
 
 def editarUsuario():
-    usuario = []
+    msg=0
+    edicao_usuario = []
     usuarios = lerUsuario()
     print('EDITAR USUARIO')
     print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
@@ -61,16 +62,48 @@ def editarUsuario():
         return
     for u in usuarios:
         if id_usuario in u[0]:
-            print(f'ID ::{u[0]} :: {u[3]} :: {u[1]}')
-        elif id_usuario not in u[0]:
-            print('Usuario Inexistente... entre com ID valido da lista de usuarios...')
-        
-    print()
-    while True:
-        opcao = input('V para voltar... ').lower()
-        if opcao in ['v']:
-            break  
+            idx = usuarios.index(u)
+        else:
+            msg+=1
+    if msg == len(usuarios):
+        print('Usuario Inexistente... entre com ID valido da lista de usuarios...')    
+        print()
+        while True:
+            opcao = input('V para voltar... ').lower()
+            if opcao in ['v']:
+                break
+        return
     
+    edicao = PrettyTable()
+    edicao.field_names=["ID","NOME","SOBRENOME","APELIDO","DATA","ATIVO"]
+    edicao.add_row(usuarios[idx])
+    print(edicao)
+    print()
+    
+    nome = str(input('Entre com o NOME do usuario: ')).title()
+    sobrenome = str(input('Entre com o SOBRENOME do usuario: ')).title()
+    apelido = str(input('Entre com o APELIDO do usuario: ')).upper()
+    data_atualizacao = datetime.datetime.now()
+    data_atualizacao = data_atualizacao.strftime("%Y/%m/%d %H:%M:%S")
+    ativo = str(input('S para ativo e N para desativado: ')).lower()
+    
+    edicao_usuario.append(id_usuario)
+    edicao_usuario.append(nome)
+    edicao_usuario.append(sobrenome)
+    edicao_usuario.append(apelido)
+    edicao_usuario.append(data_atualizacao)
+    edicao_usuario.append(ativo)
+    
+    usuarios.remove(usuarios[idx])
+    usuarios.append(edicao_usuario)
+       
+    salvarUsuarioArquivo(usuarios)
+    
+    while True:
+            opcao = input('C para continuar... ').lower()
+            if opcao in ['c']:
+                break
+    return
         
 def listarUsuario():
     usuarios = lerUsuario()
@@ -103,5 +136,10 @@ def lerUsuario():
     with open(arquivo,'r', newline='') as arq:
         usuarios = csv.reader(arq, delimiter=",")
         usuarios = list(usuarios)
-        print(f'Registros: {len(usuarios)}')
     return usuarios
+
+def salvarUsuarioArquivo(usuario):
+    arquivo = 'Controle_Estoque/usuario.csv'
+    with open(arquivo,'w',newline='') as arq:
+        arq_csv = csv.writer(arq,delimiter=",")
+        arq_csv.writerows(usuario)
