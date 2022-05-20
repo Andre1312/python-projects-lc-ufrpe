@@ -68,8 +68,8 @@ def editarEstoque():
     msg=0
     edicao_registro = []
     registros = lerEstoque()
-    print('EDIATAR REGISTRO ESTOQUE')
-    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
+    print('EDITAR REGISTRO ESTOQUE')
+    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     id_registro = str(input('Entre com o ID da registro (S sai...): ')).lower()
     if id_registro in ['s']:
         return
@@ -118,8 +118,8 @@ def editarEstoque():
     salvarEstoqueArquivo(registros)
 
 def listarEstoque():
-    print('LISTA ESTOQUE')
-    print('¬¬¬¬¬¬¬¬¬¬¬¬¬')
+    print('LISTA DE ESTOQUE')
+    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     print()
     registros=lerEstoque()
     tabela = PrettyTable()
