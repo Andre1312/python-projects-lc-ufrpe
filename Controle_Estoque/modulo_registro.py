@@ -44,11 +44,11 @@ def adicionarEstoque():
             MUT.limpaTela()
             adicionarEstoque()
     
-    id_usuario = str(input('Entre com o ID Usuario da registro: ')).title()
-    id_peca = str(input('Entre com o ID Peça da registro: ')).upper()
-    qtde_inicial = str(int(input('Entre com a quantidade inicial: ')))
-    qtde_adicionada = str(int(input('Entre com a quantidade adicionada: ')))
-    qtde_removida = str(int(input('Entre com a quantidade removida: ')))
+    id_usuario = str(input('Entre com o ID Usuario do registro: ')).title()
+    id_peca = str(input('Entre com o ID Peça do registro: ')).upper()
+    qtde_inicial = str(int(input('Entre com a Quantidade inicial: ')))
+    qtde_adicionada = str(int(input('Entre com a Quantidade adicionada: ')))
+    qtde_removida = str(int(input('Entre com a Quantidade removida: ')))
     data_atualizacao = datetime.datetime.now()
     data_atualizacao = data_atualizacao.strftime("%Y/%m/%d %H:%M:%S")
     ativo = 's'

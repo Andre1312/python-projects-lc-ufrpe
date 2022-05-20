@@ -152,7 +152,8 @@ def apagarPeca():
     id_peca = pecas[idx][0]
     nome = pecas[idx][1]
     tipo = pecas[idx][2]
-    data_atualizacao = pecas[idx][3]
+    data_atualizacao = datetime.datetime.now()
+    data_atualizacao = data_atualizacao.strftime("%Y/%m/%d %H:%M:%S")  
         
     ativo = str(input('S para ativo e N para desativado: ')).lower()
     

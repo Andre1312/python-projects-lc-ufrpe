@@ -160,8 +160,8 @@ def apagarUsuario():
     nome = usuarios[idx][1]
     sobrenome = usuarios[idx][2]
     apelido = usuarios[idx][3]
-    data_atualizacao = usuarios[idx][4]
-        
+    data_atualizacao = datetime.datetime.now()
+    data_atualizacao = data_atualizacao.strftime("%Y/%m/%d %H:%M:%S")        
     ativo = str(input('S para ativo e N para desativado: ')).lower()
     
     edicao_usuario.append(id_usuario)
