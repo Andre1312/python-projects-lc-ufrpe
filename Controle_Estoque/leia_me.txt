@@ -1,0 +1,9 @@
+
+UFRPE - Licenciatura em Computacao
+Laboratorio de Programacao 1
+Aluno - Andre Barros
+
+PROJETO 2VA
+
+Aplicativo Controle de Estoque
+Autor: André L. C. Barros

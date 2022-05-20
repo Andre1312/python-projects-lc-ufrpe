@@ -49,8 +49,8 @@ def editarPeca():
     msg=0
     edicao_peca = []
     pecas = lerPeca()
-    print('EDITAR USUARIO')
-    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
+    print('EDITAR PEÇA')
+    print('¬¬¬¬¬¬¬¬¬¬¬')
     id_peca = str(input('Entre com o ID da peça (S sai...): ')).lower()
     if id_peca in ['s']:
         return
@@ -74,7 +74,7 @@ def editarPeca():
     print(edicao)
     print()
     
-    nome = str(input('Entre com o NOME do peca: ')).title()
+    nome = str(input('Entre com o NOME da peça: ')).title()
     tipo = str(input('Entre com o TIPO da peca: ')).upper()
     data_atualizacao = datetime.datetime.now()
     data_atualizacao = data_atualizacao.strftime("%Y/%m/%d %H:%M:%S")
@@ -95,6 +95,9 @@ def editarPeca():
         
 
 def listarPeca():
+    print('LISTA DE PEÇAS')
+    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
+    print()
     pecas=lerPeca()
     tabela = PrettyTable()
     tabela.field_names=["ID","NOME","TIPO","DATA","ATIVO"]
@@ -111,8 +114,51 @@ def listarPeca():
             break
 
 def apagarPeca():
-    pass
-
+    msg=0
+    edicao_peca = []
+    pecas = lerPeca()
+    print('APAGAR PEÇA')
+    print('¬¬¬¬¬¬¬¬¬¬¬')
+    id_peca = str(input('Entre com o ID da peça (S sai...): ')).lower()
+    if id_peca in ['s']:
+        return
+    for u in pecas:
+        if id_peca in u[0]:
+            idx = pecas.index(u)
+        else:
+            msg+=1
+    if msg == len(pecas):
+        print('Peca Inexistente... entre com ID valido da lista de peças...')    
+        print()
+        while True:
+            opcao = input('V para voltar... ').lower()
+            if opcao in ['v']:
+                break
+        return
+    
+    edicao = PrettyTable()
+    edicao.field_names=["ID","NOME","TIPO","DATA","ATIVO"]
+    edicao.add_row(pecas[idx])
+    print(edicao)
+    print()
+    
+    id_peca = pecas[idx][0]
+    nome = pecas[idx][1]
+    tipo = pecas[idx][2]
+    data_atualizacao = pecas[idx][3]
+        
+    ativo = str(input('S para ativo e N para desativado: ')).lower()
+    
+    edicao_peca.append(id_peca)
+    edicao_peca.append(nome)
+    edicao_peca.append(tipo)
+    edicao_peca.append(data_atualizacao)
+    edicao_peca.append(ativo)
+    
+    pecas.remove(pecas[idx])
+    pecas.append(edicao_peca)
+       
+    salvarPecaArquivo(pecas)
 
 def salvarPeca(peca):
     arquivo = 'Controle_Estoque/peca.csv'
