@@ -46,7 +46,53 @@ def adicionarPeca():
     salvarPeca(peca)
 
 def editarPeca():
-    pass
+    msg=0
+    edicao_peca = []
+    pecas = lerPeca()
+    print('EDITAR USUARIO')
+    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
+    id_peca = str(input('Entre com o ID da peça (S sai...): ')).lower()
+    if id_peca in ['s']:
+        return
+    for u in pecas:
+        if id_peca in u[0]:
+            idx = pecas.index(u)
+        else:
+            msg+=1
+    if msg == len(pecas):
+        print('Peça Inexistente... entre com ID valido da lista de peças...')    
+        print()
+        while True:
+            opcao = input('V para voltar... ').lower()
+            if opcao in ['v']:
+                break
+        return
+    
+    edicao = PrettyTable()
+    edicao.field_names=["ID","NOME","TIPO","DATA","ATIVO"]
+    edicao.add_row(pecas[idx])
+    print(edicao)
+    print()
+    
+    nome = str(input('Entre com o NOME do peca: ')).title()
+    tipo = str(input('Entre com o TIPO da peca: ')).upper()
+    data_atualizacao = datetime.datetime.now()
+    data_atualizacao = data_atualizacao.strftime("%Y/%m/%d %H:%M:%S")
+    ativo = str(input('S para ativo e N para desativado: ')).lower()
+    
+    edicao_peca.append(id_peca)
+    edicao_peca.append(nome)
+    edicao_peca.append(tipo)
+    edicao_peca.append(data_atualizacao)
+    edicao_peca.append(ativo)
+    
+    pecas.remove(pecas[idx])
+    pecas.append(edicao_peca)
+       
+    salvarPecaArquivo(pecas)
+    
+    return
+        
 
 def listarPeca():
     pecas=lerPeca()
@@ -80,3 +126,9 @@ def lerPeca():
         pecas = csv.reader(arq, delimiter=",")
         pecas = list(pecas)
     return pecas
+
+def salvarPecaArquivo(peca):
+    arquivo = 'Controle_Estoque/peca.csv'
+    with open(arquivo,'w',newline='') as arq:
+        arq_csv = csv.writer(arq,delimiter=",")
+        arq_csv.writerows(peca)

@@ -99,10 +99,6 @@ def editarUsuario():
        
     salvarUsuarioArquivo(usuarios)
     
-    while True:
-            opcao = input('C para continuar... ').lower()
-            if opcao in ['c']:
-                break
     return
         
 def listarUsuario():
@@ -122,6 +118,7 @@ def listarUsuario():
         opcao = input('V para voltar... ').lower()
         if opcao in ['v']:
             break
+        
 def apagarUsuario():
     pass
 
