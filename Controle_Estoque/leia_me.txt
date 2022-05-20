@@ -7,3 +7,17 @@ PROJETO 2VA
 
 Aplicativo Controle de Estoque
 Autor: André L. C. Barros
+
+Pré-requisitos:
+    OS Windows 10 ou superior
+    Python 3.8
+    pip
+
+Bibliotecas:
+    prettytable
+    csv
+
+Para executar o Aplicativo:
+    Acessar a pasta Controle_Estoque/
+
+ Executar no prompt da pasta   python3.exe controle_estoque.py

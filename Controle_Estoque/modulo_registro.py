@@ -24,23 +24,25 @@ PROJETO 2VA - Controle de Estoque
 import csv
 import time
 import datetime
-import prettytable as PT
+from prettytable import PrettyTable
+
+import modulo_util as MUT
 
 def adicionarEstoque():
     registro = []
     registros = lerRegistro()
-    print('ADICIONAR REGISTRO')
-    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
+    print('ADICIONAR REGISTRO AO ESTOQUE')
+    print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     id_registro = str(input('Entre com o ID de registro (S sai...): ')).lower()
     if id_registro in ['s']:
         return
         # testa se id_registro é unico
     for linha in registros:
         if id_registro == linha[0]:
-            print('Peça já existe ! Digite um novo ID...')
+            print('Registro já existe ! Digite um novo ID...')
             time.sleep(1)
             MUT.limpaTela()
-            adicionarRegistro()
+            adicionarEstoque()
     
     id_usuario = str(input('Entre com o ID Usuario da registro: ')).title()
     id_peca = str(input('Entre com o ID Peça da registro: ')).upper()
@@ -60,7 +62,7 @@ def adicionarEstoque():
     registro.append(data_atualizacao)
     registro.append(ativo)
     
-    salvarRegistro(registro)
+    salvarEstoque(registro)
 
 def editarEstoque():
     pass
