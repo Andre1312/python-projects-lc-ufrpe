@@ -30,7 +30,7 @@ import modulo_util as MUT
 
 def adicionarEstoque():
     registro = []
-    registros = lerRegistro()
+    registros = lerEstoque()
     print('ADICIONAR REGISTRO AO ESTOQUE')
     print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     id_registro = str(input('Entre com o ID de registro (S sai...): ')).lower()
