@@ -42,7 +42,7 @@ def adicionarEstoque():
             print('Registro já existe ! Digite um novo ID...')
             time.sleep(1)
             MUT.limpaTela()
-            adicionarEstoque()
+            return
     
     id_usuario = str(input('Entre com o ID Usuario do registro: ')).title()
     id_peca = str(input('Entre com o ID Peça do registro: ')).upper()

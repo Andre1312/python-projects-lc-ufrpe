@@ -31,6 +31,7 @@ def adicionarPeca():
     print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     id_peca = str(input('Entre com o ID da peça (S sai...): ')).lower()
     if id_peca in ['s']:
+        MUT.limpaTela()
         return
         # testa se id_peca é unico
     for linha in pecas:
@@ -38,7 +39,7 @@ def adicionarPeca():
             print('Peça já existe ! Digite um novo ID...')
             time.sleep(1)
             MUT.limpaTela()
-            adicionarPeca()
+            return
     peca.append(id_peca)
     nome = str(input('Entre com o NOME da peca: ')).title()
     tipo = str(input('Entre com o TIPO da peca: ')).upper()

@@ -25,12 +25,14 @@ from prettytable import PrettyTable
 import modulo_util as MUT
 
 def adicionarUsuario():
+    id_usuario=''
     usuario = []
     usuarios = lerUsuario()
     print('ADICIONAR USUARIO')
     print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     id_usuario = str(input('Entre com o ID do usuario (S sai...): ')).lower()
     if id_usuario in ['s']:
+        MUT.limpaTela()
         return
         # testa se id_usuario é unico
     for linha in usuarios:
@@ -38,7 +40,7 @@ def adicionarUsuario():
             print('Usuario já existe (ID tem de ser numeros) ! Digite um novo ID...')
             time.sleep(1)
             MUT.limpaTela()
-            adicionarUsuario()
+            return
     usuario.append(id_usuario)
     nome = str(input('Entre com o NOME do usuario: ')).title()
     sobrenome = str(input('Entre com o SOBRENOME do usuario: ')).title()
