@@ -31,9 +31,28 @@ import time
 import datetime
 import modulo_util as MUT
 
-# cria dict com chaves nome, pontuação e dificuldade [F,M,D]
-score={'nome':'','pontuacao':0,'dificuldade':''}
-perguntas_respostas=[]
+
+def iniciar_jogo(lista, dificuldade):
+    '''
+    Inicia jogo com lista de perguntas e respostas gerada pela
+    função prepara_jogo(nivel de dificuldade)
+
+    '''
+    
+    MUT.limpar_tela()
+    score={}
+    score['nome'] = str(input('Olá, digite seu nome: ')).upper()
+    score['pontos'] = 0
+    score['dificuldade'] = dificuldade
+    print(score)
+
+    
+    a = input('break:>')
+    # fim do jogo retorna nome, pontuação e dificuldade
+    # return score
+    pass
+
+
 sair = False
 while not sair:
     MUT.limpar_tela()
@@ -56,14 +75,17 @@ while not sair:
             time.sleep(1.5)
             sair = True
         elif opcao == '1':
-            MUT.limpar_tela()
-            MUT.iniciar_jogo('facil')
+            dificuldade = 'facil'
+            perguntas_respostas = MUT.preparar_jogo(dificuldade)
+            iniciar_jogo(perguntas_respostas, dificuldade)
         elif opcao == '2':
-            MUT.limpar_tela()
-            MUT.iniciar_jogo('medio')
+            dificuldade = 'medio'
+            perguntas_respostas = MUT.preparar_jogo(dificuldade)
+            iniciar_jogo(perguntas_respostas, dificuldade)
         elif opcao == '3':
-            MUT.limpar_tela()
-            MUT.iniciar_jogo('dificil')
+            dificuldade = 'dificil'
+            perguntas_respostas = MUT.preparar_jogo(dificuldade)
+            iniciar_jogo(perguntas_respostas, dificuldade)
         elif opcao == '4':
             MUT.limpar_tela()
             MUT.mostrar_top()
