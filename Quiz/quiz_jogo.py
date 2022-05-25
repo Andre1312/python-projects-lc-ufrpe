@@ -50,19 +50,22 @@ def iniciar_jogo(lista_perguntas_respostas, dificuldade):
     MUT.limpar_tela()
     nome = str(input('Olá, digite seu nome: ')).upper()
     pontos = 0
-    
     top10=[]
-        
-    # passa de pergunta em pergunta pontuando se a resposta for correta    
+    
+    # passa de pergunta em pergunta pontuando se a resposta for correta
+    p = 1    
     for linha in lista_perguntas_respostas:
-        p = 0
+        
         if linha[0] == 'id':
             continue # pula cabecalho
             p += 1
-        print(f'{i}. {linha[2]}')        # mostra pergunta
+        print()
+        print(f'Pergunta {p}. {linha[2]}')        # mostra pergunta
+        print()
         print(f'a. {linha[3]}')     # mostra resposta 1
         print(f'b. {linha[4]}')     # mostra resposta 2
         print(f'c. {linha[5]}')     # mostra resposta 3
+        print()
         
         #compara resposta com a resposta correlate
         while True:
@@ -70,13 +73,13 @@ def iniciar_jogo(lista_perguntas_respostas, dificuldade):
             if resposta in ['a','b','c']:
                 if resposta == linha[6]:
                     pontos += nivel
-                    print(f'Resposta Correta !!! Pontos{pontos}')
+                    print(f'Resposta Correta !!! Pontos: {pontos}')
                     break
                 else:
-                    print(f'Resposta Incorreta !!! Pontos{pontos}')
+                    print(f'Resposta Incorreta !!! Pontos: {pontos}')
                     break    
             else:
-                print('Digite a letra correspondente a resposta correta !')
+                print('Favor, digite a letra correspondente a resposta correta !')
         p += 1
     
     print(f'Parabéns {nome} !!! Você conquistou {pontos} pontos no nível {dificuldade} !!!')

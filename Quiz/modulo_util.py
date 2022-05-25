@@ -27,8 +27,8 @@ def preparar_jogo(dificuldade):
         lista_perguntas_respostas = MA.ler_arquivo_quizmath()
         for linha in lista_perguntas_respostas:
             #retira da lista perguntas nivel medio e dificil
-            if linha[6] == 'medio' or linha[6] == 'dificil':
-                idx = lista_perguntas_respostas.index(linha[6])
+            if linha[1] == 'medio' or linha[1] == 'dificil':
+                idx = lista_perguntas_respostas.index(linha[1])
                 lista_perguntas_respostas.pop(idx)
             print(linha)
                
@@ -36,7 +36,7 @@ def preparar_jogo(dificuldade):
         limpar_tela()
 
         # lista_perguntas_respostas = ler_perguntas_respostas(dificuldade)
-        lista_perguntas_respostas = []
+        # lista_perguntas_respostas = []
         return lista_perguntas_respostas
 
     elif dificuldade == 'medio':
@@ -47,16 +47,17 @@ def preparar_jogo(dificuldade):
         lista_perguntas_respostas = MA.ler_arquivo_quizmath()
         for linha in lista_perguntas_respostas:
             #retira da lista perguntas nivel facil e dificil
-            if linha[6] == 'facil' or linha[6] == 'dificil':
-                idx = lista_perguntas_respostas.index(linha[6])
+            if 'facil' in linha:
+                idx = lista_perguntas_respostas.index('facil')
+                print(f'idx-{idx}')
                 lista_perguntas_respostas.pop(idx)
             print(linha)
                
-        time.sleep(1.0)
+        b = input('break:>')
         limpar_tela()
 
         # lista_perguntas_respostas = ler_perguntas_respostas(dificuldade)
-        lista_perguntas_respostas = []
+        # lista_perguntas_respostas = []
         return lista_perguntas_respostas
 
     elif dificuldade == 'dificil':
@@ -67,8 +68,8 @@ def preparar_jogo(dificuldade):
         lista_perguntas_respostas = MA.ler_arquivo_quizmath()
         for linha in lista_perguntas_respostas:
             #retira da lista perguntas nivel medio e facil
-            if linha[6] == 'medio' or linha[6] == 'facil':
-                idx = lista_perguntas_respostas.index(linha[6])
+            if linha[1] == 'medio' or linha[6] == 'facil':
+                idx = lista_perguntas_respostas.index(linha[1])
                 lista_perguntas_respostas.pop(idx)
             print(linha)
                
@@ -76,7 +77,7 @@ def preparar_jogo(dificuldade):
         limpar_tela()
 
         # lista_perguntas_respostas = ler_perguntas_respostas(dificuldade)
-        lista_perguntas_respostas = []
+        # lista_perguntas_respostas = []
         return lista_perguntas_respostas
 
 def mostrar_top10():
