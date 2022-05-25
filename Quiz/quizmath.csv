@@ -1,0 +1,6 @@
+id,Dificuldade,Pergunta,Resposta_1,Reposta_2,Reposta_3,Resposta_Correta
+1,facil,30 + 10 = ?,10,40,30,b
+2,facil,50 – 25 = ?,15,35,25,c
+3,facil,453 + 47 = ?,500,153,347,a
+4,facil,1001 – 401,1400,1001,600,c
+5,facil,78 + 31,109,783,331,a
