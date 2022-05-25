@@ -1,0 +1,5 @@
+NOME,PONTOS,DIFICULDADE
+JOAO,40,dificil
+MARCELO,20,dificil
+LUCAS,35,dificil
+LETICIA,25,dificil
