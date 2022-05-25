@@ -1,8 +1,8 @@
 
 import csv
 
-arquivo_quizmath = 'Quiz_Math/quizmath.csv'
-arquivo_top10 = 'Quiz_Math/top10.csv'
+arquivo_quizmath = 'Quiz/quizmath.csv'
+arquivo_top10 = 'Quiz/top10.csv'
 
 def ler_arquivo_quizmath():
     lista_quizmath = ler_arquivo(arquivo_quizmath)
