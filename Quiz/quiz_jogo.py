@@ -74,9 +74,11 @@ def iniciar_jogo(lista_perguntas_respostas, dificuldade):
                 if resposta == linha[6]:
                     pontos += nivel
                     print(f'Resposta Correta !!! Pontos: {pontos}')
+                    print('-'*45)
                     break
                 else:
                     print(f'Resposta Incorreta !!! Pontos: {pontos}')
+                    print('-'*45)
                     break    
             else:
                 print('Favor, digite a letra correspondente a resposta correta !')
@@ -90,7 +92,7 @@ def iniciar_jogo(lista_perguntas_respostas, dificuldade):
     MA.salvar_arquivo_top10(top10)
     
     
-    a = input('break:>')
+    brk = input('break:>')
     # fim do jogo retorna nome, pontuação e dificuldade
     # return score
     pass
