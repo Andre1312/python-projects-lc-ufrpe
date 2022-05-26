@@ -130,8 +130,9 @@ def editarQuiz():
     edicao_quiz.append(resposta_c)
     edicao_quiz.append(resposta_correta)
     
+    quizs.remove(quizs[idx])
     quizs.insert(idx,edicao_quiz)
-       
+           
     quizs_ordenada = []
     quizs_ordenada = MUT.classificar_listas(quizs,0,'a')
     quizs_ordenada.insert(0,cabecalho)
