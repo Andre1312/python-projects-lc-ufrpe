@@ -89,10 +89,10 @@ def preparar_jogo(dificuldade):
         if linha[0] == 'id':
             continue
         if linha[1] == dificuldade:
-            print(f'{linha}')
+            # print(f'{linha}')
             lista.append(linha)
     
-    brk = input('break:>')
+    # brk = input('break:>')
     time.sleep(1.0)
     limpar_tela()
     
