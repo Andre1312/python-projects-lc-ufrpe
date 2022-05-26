@@ -46,3 +46,4 @@ Para executar o Aplicativo:
 Para editar arquivos com MS-Excel ou Libreoffice-Calc:
     1- Acessar a pasta Quiz/
     2- Abrir com editor de planilhas o arquivo quizmath.csv
+    3- Salvar todos os campos como texto
