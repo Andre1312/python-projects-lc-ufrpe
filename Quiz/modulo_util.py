@@ -101,7 +101,7 @@ def preparar_jogo(dificuldade):
 def mostrar_top10(lista):
     
     lista_ordenada = classificar_listas(lista, 1, 'D')
-    
+    limpar_tela()
     print('TOP 10 - Jogadores')
     print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     print()
@@ -109,31 +109,29 @@ def mostrar_top10(lista):
     i=0
     dificuldade = str(input("Digite 'F' para Fácil, 'M' para Médio, 'D' para Difícil e 'L' para lista geral: ")).lower()
     print()
-    print(f'   NOME\t\tPONTOS')
-    print(f'   ¬¬¬¬\t\t¬¬¬¬¬¬')
     if dificuldade == 'f':
         i = 0
         for l in lista_ordenada:
             if l[2] == 'facil':
-                print(f'{i+1}. {l[0]}\t\t{l[1]}')
+                print(f'\t{i+1}. {l[0]} : {l[1]} : Facil')
                 i+=1       
     elif dificuldade == 'm':
         i = 0
         for l in lista_ordenada:
             if l[2] == 'medio':
-                print(f'{i+1}. {l[0]}\t\t{l[1]}')
+                print(f'\t{i+1}. {l[0]} : {l[1]} : Medio')
                 i+=1        
     elif dificuldade == 'd':
         i = 0
         for l in lista_ordenada:
             if l[2] == 'dificil':
-                print(f'{i+1}. {l[0]}\t\t{l[1]}')
+                print(f'\t{i+1}. {l[0]} : {l[1]} : Dificil')
                 i+=1
     elif dificuldade == 'l':
         i = 0
         for l in lista_ordenada:
             if i < 10:
-                print(f'{i+1}. {l[0]}\t\t{l[1]}\t{l[2]}')
+                print(f'\t{i+1}. {l[0]} : {l[1]} : {l[2]}')
             i+=1                 
     print()
     while True:
