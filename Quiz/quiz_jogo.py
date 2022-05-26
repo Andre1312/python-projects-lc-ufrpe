@@ -52,7 +52,7 @@ def iniciar_jogo(lista_perguntas_respostas, dificuldade):
     nome = str(input('Olá, digite seu nome: ')).upper()
     pontos = 0
     top10=[]
-    
+    print(f'Pontos {pontos}')
     # passa de pergunta em pergunta pontuando se a resposta for correta
     p = 1    
     for linha in lista_perguntas_respostas:
@@ -93,10 +93,10 @@ def iniciar_jogo(lista_perguntas_respostas, dificuldade):
     MA.salvar_arquivo_top10(top10)
     
     
-    brk = input('break:>')
+    brk = input('Digite qualquer letra para continuar :>')
     # fim do jogo retorna nome, pontuação e dificuldade
     # return score
-    pass
+    return
 
 
 sair = False
