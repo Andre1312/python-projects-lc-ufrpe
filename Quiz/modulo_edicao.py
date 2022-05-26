@@ -192,8 +192,14 @@ def apagarQuiz():
     edicao.add_row(quizs[idx])
     print(edicao)
     print()
-             
-    ativo = str(input('S para ativo e N para apagar linha com ID de perguntas e respostas: ')).lower()
+    
+    while True:         
+        resposta = str(input('Apagar linha com ID de perguntas e respostas? S para SIM e N para NÃO : ')).lower()
+        if resposta in ['s','n']:
+            if resposta == 's':
+                break
+            elif resposta == 'n':
+                return
                
     quizs.remove(quizs[idx])
      
@@ -202,4 +208,6 @@ def apagarQuiz():
     quizs_ordenada.insert(0,cabecalho)
        
     MA.salvar_arquivo_inteiro_quizmath(quizs_ordenada)
+    
+    return
 

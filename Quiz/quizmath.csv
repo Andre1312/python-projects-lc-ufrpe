@@ -6,9 +6,10 @@ id,Dificuldade,Pergunta,Resposta_1,Reposta_2,Reposta_3,Resposta_Correta
 5,facil,78 + 31 = ?,109,783,331,a
 6,medio,30 x 4 + 15 = ?,135,140,120,a
 7,medio,47 x 1 + 13 = ?,65,60,63,b
-8,medio,100 + 5 x 80 = ?,400,600,500,c
+8,medio,7 x 50 - 40,310,740,350,a
 9,medio,8 x 100 - 40 = ?,700,760,740,b
 10,medio,545 - 5 x 8 = ?,505,45,800,a
 11,dificil,100 / 5 + 13 = ?,25,45,33,c
 12,dificil,67 - 45 / 15 = ?,64,87,42,a
 13,dificil,82 + (42 / 3) - 7 = ?,14,89,28,b
+14,dificil,100 / 4 + 5 = ?,35,30,50,b
