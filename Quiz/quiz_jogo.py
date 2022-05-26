@@ -9,6 +9,9 @@ Aluno: André Luiz Coelho Barros
 Projeto:
     Quiz Math
     
+Autor:
+    André Luiz Coelho Barros 
+    
 Descrição:
     Jogo de Perguntas e Respostas de Matemática Fundamental.
     Com três níveis de dificuldade: Fácil, Médio e Dificil.
