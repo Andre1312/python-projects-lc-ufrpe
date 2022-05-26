@@ -29,10 +29,8 @@ Descrição:
 """
 
 import time
-import datetime
 import modulo_util as MUT
 import modulo_arquivos as MA
-
 
 def iniciar_jogo(lista_perguntas_respostas, dificuldade):
     '''
