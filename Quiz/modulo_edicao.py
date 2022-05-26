@@ -89,7 +89,7 @@ def editarQuiz():
     if id_quiz in ['s']:
         return
     for linha in quizs:
-        if id_quiz in linha[0]:
+        if id_quiz == linha[0]:
             idx = quizs.index(linha)
         else:
             msg+=1
@@ -174,7 +174,7 @@ def apagarQuiz():
     if id_quiz in ['s']:
         return
     for linha in quizs:
-        if id_quiz in linha[0]:
+        if id_quiz == linha[0]:
             idx = quizs.index(linha)
         else:
             msg+=1

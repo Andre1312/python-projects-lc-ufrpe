@@ -86,16 +86,17 @@ def iniciar_jogo(lista_perguntas_respostas, dificuldade):
         p += 1
     
     print(f'Parabéns {nome} !!! Você conquistou {pontos} pontos no nível {dificuldade} !!!')
+    print()
     
+    # fim do jogo retorna nome, pontuação e dificuldade e salva no arquivo top10.csv
+        
     top10.append(nome)
     top10.append(pontos)
     top10.append(dificuldade)
     MA.salvar_arquivo_top10(top10)
-    
-    
+        
     brk = input('Digite qualquer letra para continuar :>')
-    # fim do jogo retorna nome, pontuação e dificuldade
-    # return score
+    
     return
 
 
