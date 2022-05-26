@@ -1,18 +1,26 @@
-'''
-UFRPE - Licenciatura em Computacao
-Laboratorio de Programacao 1
-Aluno - Andre Barros
-PROJETO 2VA - Controle de Estoque
 
-    Módulo utilidades
+
+'''
+UFRPE - Universidade Federal Rural de Pernambuco
+DC - Departamento de Computação
+Curso: Licenciatura Plena em Computação
+Disciplina: Programação 1
+Professor: Dr. João Paulo Lima
+Aluno: André Luiz Coelho Barros
+
+Projeto:
+    Quiz Math
+
+Módulo Útil
 
 '''
 import os
 import time
 
 import modulo_arquivos as MA
+import modulo_edicao as ME
 
-
+TEMPO_ESPERA = 1.0
 
 def limpar_tela():
 # Função limpa tela do terminal
@@ -136,9 +144,46 @@ def mostrar_top10(lista):
     
 
 def editar_perguntas_respostas():
+    limpar_tela()
     print('Editar Perguntas e Respostas')
     print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     print()
+    print('1 - Adicionar Perguntas e Respostas')
+    print('2 - Editar Perguntas e Respostas')
+    print('3 - Listar Perguntas e Respostas')
+    print('4 - Apagar Perguntas e Respostas')
+    print('V - Voltar ao MENU PRINCIPAL')
+    print()
+    while True:
+        opcao = input(':> ').lower()
+        if opcao in ['1', '2', '3', '4', 'v']:
+            break
+        limpar_tela()
+        editar_perguntas_respostas()
+    if opcao == '1':
+        print('Selecionado 1...')
+        time.sleep(TEMPO_ESPERA)
+        limpar_tela()
+        ME.adicionarQuiz()
+    elif opcao == '2':
+        print('Selecionado 2...')
+        time.sleep(TEMPO_ESPERA)
+        limpar_tela()        
+        ME.editarQuiz()
+    elif opcao == '3':
+        print('Selecionado 3...')
+        time.sleep(TEMPO_ESPERA)
+        limpar_tela()
+        ME.listarQuiz()
+    elif opcao == '4':
+        print('Selecionado 4...')
+        time.sleep(TEMPO_ESPERA)
+        limpar_tela()
+        ME.apagarQuiz()
+    elif opcao == 'v':
+        print('Selecionado V...')
+        time.sleep(TEMPO_ESPERA)
+        return
 
     time.sleep(1.0)
     limpar_tela()

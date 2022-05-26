@@ -8,6 +8,12 @@ def ler_arquivo_quizmath():
     lista_quizmath = ler_arquivo(arquivo_quizmath)
     return lista_quizmath
 
+def salvar_arquivo_quizmath(quizmath):
+    salvar_arquivo(arquivo_quizmath,quizmath)
+
+def salvar_arquivo_inteiro_quizmath(quizmath):
+    salvar_arquivo_inteiro(arquivo_quizmath,quizmath)
+
 def ler_arquivo_top10():
     lista_top10 = ler_arquivo(arquivo_top10)
     return lista_top10
@@ -15,6 +21,9 @@ def ler_arquivo_top10():
 def salvar_arquivo_top10(top10):
     salvar_arquivo(arquivo_top10, top10)
 
+
+
+# - funções básicas de ler e salvar arquivos .csv
 def ler_arquivo(arquivo):
     with open(arquivo,'r', newline='') as arq:
         linhas = csv.reader(arq, delimiter=",")
