@@ -133,7 +133,8 @@ while not sair:
             iniciar_jogo(perguntas_respostas, dificuldade)
         elif opcao == '4':
             MUT.limpar_tela()
-            MUT.mostrar_top()
+            lista_top10 = MA.ler_arquivo_top10()
+            MUT.mostrar_top10(lista_top10)
         elif opcao == '5':
             MUT.limpar_tela()
             MUT.editar_perguntas_respostas()
