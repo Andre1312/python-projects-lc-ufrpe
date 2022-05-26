@@ -1,5 +1,20 @@
 
+'''
+UFRPE - Universidade Federal Rural de Pernambuco
+DC - Departamento de Computação
+Curso: Licenciatura Plena em Computação
+Disciplina: Programação 1
+Professor: Dr. João Paulo Lima
+Aluno: André Luiz Coelho Barros
+
+Projeto:
+    Quiz Math
+
+
+    Modulo Arquivos - funções para salvar CRUD  em aquivos .csv
+'''
 import csv
+
 
 arquivo_quizmath = 'Quiz/quizmath.csv'
 arquivo_top10 = 'Quiz/top10.csv'

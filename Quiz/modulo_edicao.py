@@ -36,15 +36,18 @@ import modulo_arquivos as MA
 def adicionarQuiz():
     quiz = []
     quizs = MA.ler_arquivo_quizmath()
+    cabecalho = quizs[0]
+    quizs.pop(0)
     print('ADICIONAR PERGUNTAS E RESPOSTAS')
     print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
-    id = str(input('Entre com o ID da Pergunta (S sai...): ')).lower()
-    if id in ['s']:
+    print()
+    id_quiz = str(input('Entre com o ID da Pergunta (S sai...): ')).lower()
+    if id_quiz in ['s']:
         MUT.limpaTela()
         return
         # testa se id é unico
     for linha in quizs:
-        if id == linha[0]:
+        if id_quiz == linha[0]:
             print('Pergunta já existe ! Digite um novo ID único...')
             time.sleep(1.5)
             MUT.limpaTela()
@@ -64,7 +67,7 @@ def adicionarQuiz():
     resposta_c = str(input("Entre com a resposta para letra 'c.' : "))
     resposta_correta = str(input("Entre com a resposta correta 'a', 'b', 'c' : ")).lower()
           
-    quiz.append(id)
+    quiz.append(id_quiz)
     quiz.append(dificuldade)
     quiz.append(pergunta)
     quiz.append(resposta_a)
@@ -78,7 +81,9 @@ def editarQuiz():
     msg=0
     edicao_quiz = []
     quizs = MA.ler_arquivo_quizmath()
-    print('EDITAR PPERGUNTAS E RESPOSTAS')
+    cabecalho = quizs[0]
+    quizs.pop(0)
+    print('EDITAR PERGUNTAS E RESPOSTAS')
     print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     id_quiz = str(input('Entre com o ID da pergunta (S sai...): ')).lower()
     if id_quiz in ['s']:
@@ -124,9 +129,15 @@ def editarQuiz():
     edicao_quiz.append(resposta_b)
     edicao_quiz.append(resposta_c)
     edicao_quiz.append(resposta_correta)
-       
-    MA.salvar_arquivo_quizmath(edicao_quiz)
     
+    quizs.insert(idx,edicao_quiz)
+       
+    quizs_ordenada = []
+    quizs_ordenada = MUT.classificar_listas(quizs,0,'a')
+    quizs_ordenada.insert(0,cabecalho)
+       
+    MA.salvar_arquivo_inteiro_quizmath(quizs_ordenada)
+           
     return
         
 
@@ -135,6 +146,8 @@ def listarQuiz():
     print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     print()
     quizs=MA.ler_arquivo_quizmath()
+    cabecalho = quizs[0]
+    quizs.pop(0)
     tabela = PrettyTable()
     tabela.field_names=["ID","DIFICULDADE","PERGUNTA","RESPOSTA a.","RESPOSTA b.","RESPOSTA c.","RESPOSTA CORRETA"]
         
@@ -153,6 +166,8 @@ def apagarQuiz():
     msg=0
     edicao_quiz = []
     quizs = MA.ler_arquivo_quizmath()
+    cabecalho = quizs[0]
+    quizs.pop(0)
     print('APAGAR PERGUNTAS E RESPOSTAS')
     print('¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬')
     id_quiz = str(input('Entre com o ID da pergunta (S sai...): ')).lower()
@@ -184,24 +199,7 @@ def apagarQuiz():
      
     quizs_ordenada = []
     quizs_ordenada = MUT.classificar_listas(quizs,0,'a')
+    quizs_ordenada.insert(0,cabecalho)
        
     MA.salvar_arquivo_inteiro_quizmath(quizs_ordenada)
 
-def salvarQuiz(quiz):
-    arquivo = 'Controle_Estoque/quiz.csv'
-    with open(arquivo,'a',newline='') as arq:
-        arq_csv=csv.writer(arq,delimiter=",")
-        arq_csv.writerow(quiz)
-
-def lerQuiz():
-    arquivo = 'Controle_Estoque/quiz.csv'
-    with open(arquivo,'r',newline='') as arq:
-        quizs = csv.reader(arq, delimiter=",")
-        quizs = list(quizs)
-    return quizs
-
-def salvarQuizArquivo(quiz):
-    arquivo = 'Controle_Estoque/quiz.csv'
-    with open(arquivo,'w',newline='') as arq:
-        arq_csv = csv.writer(arq,delimiter=",")
-        arq_csv.writerows(quiz)
