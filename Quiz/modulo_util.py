@@ -108,32 +108,24 @@ def mostrar_top10(lista):
         for l in lista_ordenada:
             if l[2] == 'facil':
                 print(f'{i+1}. {l[0]}\t\t{l[1]}')
-            # else:
-            #    break
-            i+=1           
+                i+=1       
     elif dificuldade == 'm':
         i = 0
         for l in lista_ordenada:
             if l[2] == 'medio':
                 print(f'{i+1}. {l[0]}\t\t{l[1]}')
-            # else:
-            #     break
-            i+=1        
+                i+=1        
     elif dificuldade == 'd':
         i = 0
         for l in lista_ordenada:
             if l[2] == 'dificil':
                 print(f'{i+1}. {l[0]}\t\t{l[1]}')
-            # else:
-            #     break
-            i+=1
+                i+=1
     elif dificuldade == 'l':
         i = 0
         for l in lista_ordenada:
             if i < 10:
                 print(f'{i+1}. {l[0]}\t\t{l[1]}\t{l[2]}')
-            # else:
-            #     break
             i+=1                 
     print()
     while True:
