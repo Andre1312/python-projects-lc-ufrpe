@@ -24,7 +24,7 @@ Descrição:
     O jogo guarda os 10 nomes com maior pontuação, ordenada da mais alta para a mais 
     baixa.
     O jogo inicialmente pede o nome e o nivel de dificuldade, 
-    depois são sorteadas 10 perguntas para aquele nível de dificuldade.
+    depois são mostradas as perguntas para aquele nível de dificuldade.
     As perguntas com as respostas são gravadas em arquivo .csv que permitem 
     ser editados por MS Excel ou qualquer outro editor de arquivos.
     Os top 10 nomes também são guardados em arquivo.
